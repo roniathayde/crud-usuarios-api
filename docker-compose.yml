@@ -1,0 +1,13 @@
+#docker run --name backend-crud -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=mydb -p 5432:5432 bitnami/postgresql
+
+version: '3' # version docker compose
+
+services: # services within app
+  backend-crud: # name of container
+    image: bitnami/postgresql # wich image in use?
+    ports: 
+      - 5432:5432 # ports of container
+    environment:
+      - POSTGRESQL_USERNAME=docker
+      - POSTGRESQL_PASSWORD=docker
+      - POSTGRESQL_DATABASE=backend-crud-db
